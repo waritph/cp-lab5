@@ -6,11 +6,11 @@ import './assets/style.css'
 import App from './App.vue'
 import router from './router'
 import 'nprogress/nprogress.css'
-import { inject } from '@vercel/analytics'
+import { Analytics } from "@vercel/analytics/next"
 
 const app = createApp(App)
-inject()
 app.use(createPinia())
 app.use(router)
+app.use(Analytics)
 
 app.mount('#app')
